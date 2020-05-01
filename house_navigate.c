@@ -86,11 +86,11 @@ int main() {
   State state = FORWARD;
 
   // House 1
-  double home1[3] = { 4.54, 2.6, 1.87 };
-  double home2[3] = { 6.22, 2.6, 3.22 };
-  double home3[3] = { 8.5, 2.6, 2.75  };
-  double home4[3] = { 12.1, 2.6, 4.22 };
-  double home5[3] = { 7.41, 2.6, 7.88 };
+  double home1[3] = { 4.54, 0, 1.87 };
+  double home2[3] = { 6.22, 0, 3.22 };
+  double home3[3] = { 8.5, 0, 2.75  };
+  double home4[3] = { 12.1, 0, 4.22 };
+  double home5[3] = { 7.41, 0, 7.88 };
 
   // Enable camera to click picure at checkpoint. 
   WbDeviceTag cam = wb_robot_get_device("camera");
@@ -133,8 +133,7 @@ int main() {
     double x = currLoc[0]; double y = currLoc[1]; double z = currLoc[2];
 
     // check if locations have been reached 
-    if (fabs(x - home1[0]) < 0.5 && fabs(y - home1[1]) < 0.2 && 
-                                fabs(z - home1[2]) < 0.5)
+    if (fabs(x - home1[0]) < 0.5 && fabs(z - home1[2]) < 0.5)
       {
         if (!one) {
             // mark that home1 has been reached
@@ -144,8 +143,7 @@ int main() {
         }
       }
 
-    if (fabs(x - home2[0]) < 0.5 && fabs(y - home2[1]) < 0.2 && 
-                                fabs(z - home2[2]) < 0.5)
+    if (fabs(x - home2[0]) < 0.5 && fabs(z - home2[2]) < 0.5)
       {
         if (one && !two) {
             // mark that home1 has been reached
@@ -155,8 +153,7 @@ int main() {
         }
       }    
 
-    if (fabs(x - home3[0]) < 0.5 && fabs(y - home3[1]) < 0.2 && 
-                                fabs(z - home3[2]) < 0.5)
+    if (fabs(x - home3[0]) < 0.5 && fabs(z - home3[2]) < 0.5)
       {
         if (two && !three) {
             // mark that home1 has been reached
@@ -166,8 +163,7 @@ int main() {
         }
       }  
 
-    if (fabs(x - home4[0]) < 0.5 && fabs(y - home4[1]) < 0.2 && 
-                                fabs(z - home4[2]) < 0.5)
+    if (fabs(x - home4[0]) < 0.5 && fabs(z - home4[2]) < 0.5)
       {
         if (three && !four) {
             // mark that home1 has been reached
@@ -178,8 +174,7 @@ int main() {
       }  
 
 
-    if (fabs(x - home5[0]) < 0.5 && fabs(y - home5[1]) < 0.2 && 
-                                fabs(z - home5[2]) < 0.5)
+    if (fabs(x - home5[0]) < 0.5 && fabs(z - home5[2]) < 0.5)
       {
         if (four && !five) {
             // mark that home1 has been reached
